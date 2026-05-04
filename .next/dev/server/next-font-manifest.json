@@ -1,10 +1,14 @@
 {
   "app": {
-    "[project]/Documentos/bloguito/app/isr/page": [
+    "[project]/app/page": [
       "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
       "static/media/797e433ab948586e-s.p.0.q-h669a_dqa.woff2"
     ],
-    "[project]/Documentos/bloguito/app/page": [
+    "[project]/app/ssg/page": [
+      "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
+      "static/media/797e433ab948586e-s.p.0.q-h669a_dqa.woff2"
+    ],
+    "[project]/app/ssr/page": [
       "static/media/caa3a2e1cccd8315-s.p.16t1db8_9y2o~.woff2",
       "static/media/797e433ab948586e-s.p.0.q-h669a_dqa.woff2"
     ]

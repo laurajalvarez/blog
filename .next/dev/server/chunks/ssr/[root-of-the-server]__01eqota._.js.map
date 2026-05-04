@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 13, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/laura/OneDrive/Documentos/bloguito/app/favicon.ico.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 256, height: 256 }\n"],"names":["src","width","height"],"mappings":";;;;AAAA;;uCACe;IAAEA,KAAAA,mIAAG;IAAEC,OAAO;IAAKC,QAAQ;AAAI"}},
+    {"offset": {"line": 28, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/laura/OneDrive/Documentos/bloguito/app/page.tsx"],"sourcesContent":["import Image from \"next/image\";\nimport Link from \"next/link\";\n\nexport default function Home() {\n  return (\n    <main>\n      <h1>Demo de Caché</h1>\n\n      <ul>\n        <li><Link href=\"/ssg\">SSG (force-cache)</Link></li>\n        <li><Link href=\"/isr\">ISR (revalidate)</Link></li>\n        <li><Link href=\"/ssr\">SSR (no-store)</Link></li>\n      </ul>\n    </main>\n  );\n}\n"],"names":["Home","href"],"mappings":";;;;;AACA;;;AAEe,SAASA;IACtB,qBACE,8OAAC;;0BACC,8OAAC;0BAAG;;;;;;0BAEJ,8OAAC;;kCACC,8OAAC;kCAAG,cAAA,8OAAC,0LAAI;4BAACC,MAAK;sCAAO;;;;;;;;;;;kCACtB,8OAAC;kCAAG,cAAA,8OAAC,0LAAI;4BAACA,MAAK;sCAAO;;;;;;;;;;;kCACtB,8OAAC;kCAAG,cAAA,8OAAC,0LAAI;4BAACA,MAAK;sCAAO;;;;;;;;;;;;;;;;;;;;;;;AAI9B"}}]
+}

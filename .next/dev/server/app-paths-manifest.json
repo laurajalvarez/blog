@@ -1,4 +1,8 @@
 {
-  "/isr/page": "app/isr/page.js",
-  "/page": "app/page.js"
+  "/api/presence/disconnect/route": "app/api/presence/disconnect/route.js",
+  "/api/presence/route": "app/api/presence/route.js",
+  "/api/presence/stream/route": "app/api/presence/stream/route.js",
+  "/page": "app/page.js",
+  "/ssg/page": "app/ssg/page.js",
+  "/ssr/page": "app/ssr/page.js"
 }

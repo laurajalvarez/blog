@@ -1,0 +1,3 @@
+{
+  "/api/presence/stream/route": "app/api/presence/stream/route.js"
+}
