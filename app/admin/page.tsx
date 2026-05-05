@@ -36,9 +36,11 @@ export default function AdminPage() {
         try {
             const res = await fetch("/api/posts");
             const data = await res.json();
-            setPosts(data);
+            // FIX: verificar que sea un array antes de guardar en estado
+            setPosts(Array.isArray(data) ? data : []);
         } catch {
             setError("No se pudieron cargar los posts.");
+            setPosts([]);
         } finally {
             setLoading(false);
         }
@@ -108,7 +110,6 @@ export default function AdminPage() {
                         #fff5f8;
                 }
 
-                /* Puntitos de fondo */
                 .hk-page::before {
                     content: '';
                     position: fixed;
@@ -383,7 +384,6 @@ export default function AdminPage() {
                     transform: none;
                 }
 
-                /* Tabla */
                 .hk-table-wrap { overflow-x: auto; }
 
                 .hk-table {
@@ -498,6 +498,18 @@ export default function AdminPage() {
                     color: #333;
                     font-weight: 800;
                     font-size: 0.88rem;
+                }
+
+                .hk-db-warning {
+                    background: #fff8e1;
+                    border: 2px solid #ffe082;
+                    color: #f57f17;
+                    border-radius: 12px;
+                    padding: 0.7rem 1rem;
+                    font-size: 0.82rem;
+                    font-weight: 700;
+                    margin-bottom: 1rem;
+                    text-align: center;
                 }
 
                 @media (max-width: 768px) {
@@ -617,7 +629,14 @@ export default function AdminPage() {
                                 <p style={{ color: "#ffb3cc", fontWeight: 700 }}>Cargando... 🌸</p>
                             </div>
                         ) : posts.length === 0 ? (
-                            <p className="hk-empty">No hay entradas todavía 🎀<br />¡Sé la primera en publicar!</p>
+                            <>
+                                {error && (
+                                    <div className="hk-db-warning">
+                                        ⚠️ Necesitas configurar tu .env.local con las credenciales de MySQL
+                                    </div>
+                                )}
+                                <p className="hk-empty">No hay entradas todavía 🎀<br />¡Sé la primera en publicar!</p>
+                            </>
                         ) : (
                             <div className="hk-table-wrap">
                                 <table className="hk-table">
