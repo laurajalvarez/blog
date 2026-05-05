@@ -105,10 +105,10 @@ export default function AdminPage() {
                 .hk-page {
                     min-height: 100vh;
                     background:
-                        radial-gradient(circle at 10% 20%, #ffd6e7 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, #ffc2d4 0%, transparent 40%),
-                        #fff5f8;
-                }
+                        radial-gradient(circle at 10% 20%, rgba(255,214,231,0.6) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 80%, rgba(255,194,212,0.6) 0%, transparent 40%),
+                        url('/fondo.jpeg') center center / cover no-repeat fixed;
+                }               
 
                 .hk-page::before {
                     content: '';

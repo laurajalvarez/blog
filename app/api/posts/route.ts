@@ -1,14 +1,10 @@
 // app/api/posts/route.ts
-// GET    /api/posts        → últimas 5 entradas
-// POST   /api/posts        → crea entrada (requiere author)
-// DELETE /api/posts?id=N   → elimina entrada
-
 import { NextRequest, NextResponse } from "next/server";
-import { getPosts, createPost, deletePost } from "../../../lib/getPosts";
+import { getPostsFromDB, createPost, deletePost } from "../../../lib/getPosts";
 
 export async function GET() {
     try {
-        const posts = await getPosts();
+        const posts = await getPostsFromDB();
         return NextResponse.json(posts);
     } catch (err) {
         console.error("[GET /api/posts]", err);
