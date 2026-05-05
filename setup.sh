@@ -17,7 +17,7 @@ sudo mysql -e "FLUSH PRIVILEGES;"
 
 echo "🍓 [4/5] Creando .env.local..."
 cat > .env.local << EOF
-MYSQL_HOST=localhost
+MYSQL_HOST=192.168.1.159
 MYSQL_PORT=3306
 MYSQL_USER=bloguito
 MYSQL_PASSWORD=password123
