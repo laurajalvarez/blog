@@ -19,17 +19,17 @@ const IMAGES = ["/assets/img1.jpeg", "/assets/img2.jpeg", "/assets/img3.jpeg"];
 const EMOJIS = ["🌸", "🎀", "⭐", "🍓"];
 
 export default function AdminPage() {
-    const [posts, setPosts]       = useState<Post[]>([]);
-    const [loading, setLoading]   = useState(true);
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [loading, setLoading] = useState(true);
     const [submitting, setSubmitting] = useState(false);
     const [deleting, setDeleting] = useState<number | null>(null);
-    const [error, setError]       = useState("");
-    const [success, setSuccess]   = useState("");
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
 
-    const [title, setTitle]     = useState("");
+    const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [image, setImage]     = useState(IMAGES[0]);
-    const [author, setAuthor]   = useState("");
+    const [image, setImage] = useState(IMAGES[0]);
+    const [author, setAuthor] = useState("");
 
     const fetchPosts = useCallback(async () => {
         setLoading(true);
@@ -528,8 +528,18 @@ export default function AdminPage() {
                                 <span className="hk-logo-sub">PANEL DE ENTRADAS</span>
                             </div>
                         </div>
-                        <Link href="/" className="hk-back">← Inicio 🌸</Link>
+                        <Link href="/" className="hk-back"> 𖦹 ׂ 𓈒🌸 Inicio </Link>
+                        <button
+                        onClick={async () => {
+                            await fetch("/api/logout", { method: "POST" });
+                            window.location.href = "/login";
+                        }}
+                        className="hk-back"
+                    >
+                     ✩°｡🧸 Logout
+                    </button>
                     </div>
+                    
                 </header>
 
                 <div className="hk-body">
@@ -537,7 +547,7 @@ export default function AdminPage() {
                     <section className="hk-card">
                         <h2 className="hk-card-title">🌸 Nueva Entrada</h2>
 
-                        {error   && <div className="hk-alert-error">{error}</div>}
+                        {error && <div className="hk-alert-error">{error}</div>}
                         {success && <div className="hk-alert-success">{success}</div>}
 
                         <form className="hk-form" onSubmit={handleSubmit}>
