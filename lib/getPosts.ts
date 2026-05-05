@@ -13,7 +13,7 @@ export type Post = {
     random:    number;
 };
 
-// ✅ Consulta MySQL directo — usada SOLO por el API route (evita recursión)
+// Consulta MySQL directo — usada SOLO por el API route (evita recursión)
 export async function getPostsFromDB(): Promise<Post[]> {
     const [rows] = await pool.query<RowDataPacket[]>(
         `SELECT id, title, content, image, author, timestamp, random
@@ -32,7 +32,7 @@ export async function getPostsFromDB(): Promise<Post[]> {
     }));
 }
 
-// ✅ Usada por las páginas SSG/ISR/SSR — usa fetch para que el caché de Next.js funcione
+// Usada por las páginas SSG/ISR/SSR — usa fetch para que el caché de Next.js funcione
 export async function getPosts(options?: RequestInit): Promise<Post[]> {
     const base = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
     const res = await fetch(`${base}/api/posts`, {
@@ -42,7 +42,7 @@ export async function getPosts(options?: RequestInit): Promise<Post[]> {
     return res.json();
 }
 
-// ✅ Obtener un post por ID
+//  Obtener un post por ID
 export async function getPostById(id: number): Promise<Post | null> {
     const [rows] = await pool.query<RowDataPacket[]>(
         `SELECT id, title, content, image, author, timestamp, random
@@ -62,7 +62,7 @@ export async function getPostById(id: number): Promise<Post | null> {
     };
 }
 
-// ✅ Crear un post nuevo
+// Crear un post nuevo
 export async function createPost(
     data: Pick<Post, "title" | "content" | "image" | "author">
 ): Promise<{ insertId: number }> {
@@ -74,7 +74,7 @@ export async function createPost(
     return result as { insertId: number };
 }
 
-// ✅ Eliminar un post por ID
+// Eliminar un post por ID
 export async function deletePost(id: number): Promise<boolean> {
     const [result] = await pool.query(
         "DELETE FROM posts WHERE id = ?",
