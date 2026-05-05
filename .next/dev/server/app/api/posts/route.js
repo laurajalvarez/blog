@@ -1,0 +1,11 @@
+var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/posts/route.js")
+R.c("server/chunks/blog_app_api_posts_route_ts_10c.-l-._.js")
+R.c("server/chunks/05r5_next_0eeya_w._.js")
+R.c("server/chunks/05r5_mysql2_0vg6iy5._.js")
+R.c("server/chunks/05r5_iconv-lite_0cpv27y._.js")
+R.c("server/chunks/05r5_aws-ssl-profiles_lib_11n.ddg._.js")
+R.c("server/chunks/05r5_0otw3uw._.js")
+R.c("server/chunks/[root-of-the-server]__01_f05~._.js")
+R.c("server/chunks/blog__next-internal_server_app_api_posts_route_actions_06~w7f3.js")
+R.m("[project]/blog/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/blog/app/api/posts/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/blog/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/blog/app/api/posts/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports
